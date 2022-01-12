@@ -1,7 +1,6 @@
 let 秒 = 0
 let sprite: game.LedSprite = null
 let 失敗 = 0
-let 猜題ABCD = 0
 function 贏的畫面 () {
     for (let index = 0; index < 3; index++) {
         basic.showLeds(`
@@ -53,88 +52,6 @@ input.onButtonPressed(Button.A, function () {
         if (game.score() < 4) {
             輸的畫面()
         }
-    }
-})
-input.onGesture(Gesture.Shake, function () {
-    猜題ABCD = randint(1, 4)
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . # . .
-        . . . . .
-        . . . . .
-        `)
-    basic.showLeds(`
-        . . . . .
-        . # # # .
-        . # . # .
-        . # # # .
-        . . . . .
-        `)
-    basic.showLeds(`
-        # # # # #
-        # . . . #
-        # . . . #
-        # . . . #
-        # # # # #
-        `)
-    basic.showLeds(`
-        . . . . .
-        . # # # .
-        . # . # .
-        . # # # .
-        . . . . .
-        `)
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . # . .
-        . . . . .
-        . . . . .
-        `)
-    if (猜題ABCD == 1) {
-        basic.showLeds(`
-            . # # . .
-            # . . # .
-            # # # # .
-            # . . # .
-            # . . # .
-            `)
-        basic.pause(1000)
-        basic.clearScreen()
-    }
-    if (猜題ABCD == 2) {
-        basic.showLeds(`
-            # # # . .
-            # . . # .
-            # # # # .
-            # . . # .
-            # # # . .
-            `)
-        basic.pause(1000)
-        basic.clearScreen()
-    }
-    if (猜題ABCD == 3) {
-        basic.showLeds(`
-            . # # # .
-            # . . . .
-            # . . . .
-            # . . . .
-            . # # # .
-            `)
-        basic.pause(1000)
-        basic.clearScreen()
-    }
-    if (猜題ABCD == 4) {
-        basic.showLeds(`
-            # # # . .
-            # . . # .
-            # . . # .
-            # . . # .
-            # # # . .
-            `)
-        basic.pause(1000)
-        basic.clearScreen()
     }
 })
 function 輸的畫面 () {
